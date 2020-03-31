@@ -12,6 +12,7 @@ const Drawer = createDrawerNavigator();
 import Case from "./pages/Case";
 import TitleCase from "./pages/TitleCase";
 import AlphabeticalOrder from "./pages/AlphabeticalOrder";
+import LocateReplace from "./pages/LocateReplace";
 
 export default function Routes() {
   return (
@@ -29,6 +30,7 @@ export default function Routes() {
           name="Alphabetical Order"
           component={AlphabeticalOrder}
         />
+        <Drawer.Screen name="Locate and Replace" component={LocateReplace} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
