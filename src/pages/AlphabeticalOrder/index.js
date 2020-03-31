@@ -10,18 +10,14 @@ import {
   ContainerInput
 } from "./styles";
 
-export default function TitleCase() {
+export default function AlphabeticalOrder() {
   const [newText, setNewText] = useState("");
 
   convertTextTitleCase = () => {
     Keyboard.dismiss();
     const text = newText;
-    const lowercasetext = text.toLowerCase();
-    const arraycase = lowercasetext.split(" ");
-    let uppercasetext = arraycase.map(
-      item => item.charAt(0).toUpperCase() + item.slice(1)
-    );
-    const title = uppercasetext.toString().replace(/,/g, " ");
+    const arraycase = text.split(" ").sort();
+    const title = arraycase.toString().replace(/,/g, " ");
     setNewText(title);
   };
 
@@ -40,7 +36,7 @@ export default function TitleCase() {
               convertTextTitleCase();
             }}
           >
-            <TextButton>TITLE CASE</TextButton>
+            <TextButton>ALPHABETICAL ORDER</TextButton>
           </ButtonOption>
         </ContainerButton>
       </Header>
